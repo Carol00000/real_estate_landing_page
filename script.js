@@ -12,7 +12,7 @@ const galleryPhotos = [
     {
         title: 'Beachfront Paradise',
         price: '$3,200,000',
-        url:   '/ssets/14.webp'
+        url:   '/assets/14.webp'
     },
     {
         title: 'Urban Penthouse',
