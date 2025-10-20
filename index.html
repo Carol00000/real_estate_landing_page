@@ -3,218 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marci Metzger Homes - Premium Real Estate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Marci Metzger - Luxury Real Estate Agent | The Ridge Realty Group</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/agent.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <!-- Navigation -->
+<header>
+    <div class="logo">
+        <img src="assets/qt=q_95.webp" alt="Marci Metzger Logo">
+    </div>
     <nav>
-        <div class="nav-container">
-            <a href="#" class="logo"></a>
-            <ul class="nav-links">
-                <li><a href="#realtor">About</a></li>
-                <li><a href="#carousel">Home</a></li>
-                <li><a href="#properties">Properties</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+        <a onclick="scrollToSection('about')">About</a>
+        <a onclick="scrollToSection('properties')">Properties</a>
+        <a onclick="scrollToSection('gallery')">Gallery</a>
+        <a onclick="scrollToSection('services')">Services</a>
+        <a onclick="scrollToSection('contact')">Contact</a>
     </nav>
+</header>
 
-    <section id="realtor" class="realtor-section">
-        <div class="realtor-container">
-            <div class="realtor-image">
-                <img src="assets/pic.webp" alt="Marci Metzger">
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>LUXURY HOMES</h1>
+        <p>Expert Real Estate Solutions for Your Dream Property</p>
+        <button class="cta-button" onclick="scrollToSection('properties')">EXPLORE LISTINGS</button>
+    </div>
+</section>
+
+    <section class="agent-intro" id="about">
+        <div class="agent-container">
+            <div class="agent-photo">
+                <img src="./assets/pic.webp" alt="Marci Metzger">
             </div>
-            <div class="realtor-info">
-                <h1 class="realtor-name">MARCI METZGER<span class="realtor-name-subtitle">THE RIDGE REALTY GROUP</span></h1>
-                <p class="realtor-title">Pahrump Realtor</p>
-                <p class="realtor-bio">Three decades of connecting clients to their dream properties. Expert in exclusive estates and natural environments.</p>
-                <p class="realtor-title">THREE DECADES OF REAL ESTATE LEGACY</p>
-                <div class="realtor-stats">
-                    <div class="stat">
-                        <h3>300+</h3>
-                        <p>Properties Sold</p>
-                    </div>
-                    <div class="stat">
-                        <h3>20+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat">
-                        <h3>$100M+</h3>
-                        <p>Sales Volume</p>
-                    </div>
+            <div class="agent-info">
+                <h2>Marci Metzger</h2>
+                <p class="title">PAHRUMP REALTOR • THE RIDGE REALTY GROUP</p>
+                <p>Three decades of connecting clients to their dream properties. Expert in exclusive estates and natural environments.</p>
+                <p class="phone">📞 (206) 919-6886</p>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <h3>300+</h3>
+                <p>Properties Sold</p>
+            </div>
+            <div class="stat">
+                <h3>25+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat">
+                <h3>$100M+</h3>
+                <p>Sales Volume</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section get-sold-section" id="properties">
+        <h2>GET IT SOLD</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-number">1</div>
+                <h3>Top Residential Sales</h3>
+                <p class="subtitle">LAST 5 YEARS</p>
+                <p>We helped nearly 90 clients in 2021, and closed 28.5 million in sales!</p>
+                <div class="highlight-box">
+                    Our team works hard everyday to grow and learn, so that we may continue to excel in our market.
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-number">2</div>
+                <h3>Don't Just List It</h3>
+                <p class="subtitle">WE GET IT SOLD</p>
+                <p>We exhaust every avenue to ensure our listings are at the fingertips of every possible buyer.</p>
+                <div class="highlight-box">
+                    Getting you top dollar for your home with comprehensive marketing strategy.
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-number">3</div>
+                <h3>Guide to Buyers</h3>
+                <p class="subtitle">EXPERT MARKET GUIDANCE</p>
+                <p>Nobody knows the market like we do. Enjoy having a pro at your service.</p>
+                <div class="highlight-box">
+                    Market analysis, upgrades lists, contractors on speed dial, & more!
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
-    <!-- Get it sold -->
-     <section id="properties" class="featured">
-        <div class="container">
-            <h2 class="section-title">GET IT SOLD</h2>
-
-            <div class="process-steps">
-                <!-- Step 1 -->
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=250&fit=crop" alt="Top Residential Sales">
-                    </div>
-                    <h3 class="step-title">Top Residential Sales</h3>
-                    <p class="step-subtitle">Last 5 Years</p>
-                    <p class="step-description">We helped nearly 90 clients in 2021, and closed 28.5 million in sales!</p>
-                    <div class="step-highlight">
-                        Our team works hard everyday to grow and learn, so that we may continue to excel in our market.
-                    </div>
+    <section class="search-section" id="properties-search">
+        <h2>Find Your Dream Home</h2>
+        <form class="search-form" onsubmit="handleSearch(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="City, neighborhood..." required>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=250&fit=crop" alt="Get It Sold">
-                    </div>
-                    <h3 class="step-title">Don't Just List It</h3>
-                    <p class="step-subtitle">We Get It Sold</p>
-                    <p class="step-description">We exhaust every avenue to ensure our listings are at the fingertips of every possible buyer.</p>
-                    <div class="step-highlight">
-                        Getting you top dollar for your home with comprehensive marketing strategy.
-                    </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type">
+                        <option value="">Any Type</option>
+                        <option value="house">House</option>
+                        <option value="condo">Condo</option>
+                        <option value="mansion">Mansion</option>
+                        <option value="estate">Estate</option>
+                    </select>
                 </div>
-
-                <!-- Step 3 -->
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop" alt="Guide to Buyers">
-                    </div>
-                    <h3 class="step-title">Guide to Buyers</h3>
-                    <p class="step-subtitle">Expert Market Guidance</p>
-                    <p class="step-description">Nobody knows the market like we do. Enjoy having a pro at your service.</p>
-                    <div class="step-highlight">
-                        Market analysis, upgrades lists, contractors on speed dial, & more!
-                    </div>
+                <div class="form-group">
+                    <label for="sort">Sort By</label>
+                    <select id="sort">
+                        <option value="recent">Recent</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
                 </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bedrooms">Bedrooms</label>
+                    <select id="bedrooms">
+                        <option value="">Any Number</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="baths">Baths</label>
+                    <select id="baths">
+                        <option value="">Any Number</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="minprice">Min Price</label>
+                    <input type="number" id="minprice" placeholder="$">
+                </div>
+                <div class="form-group">
+                    <label for="maxprice">Max Price</label>
+                    <input type="number" id="maxprice" placeholder="$">
+                </div>
+            </div>
+
+            <button type="submit" class="search-btn">SEARCH NOW</button>
+        </form>
+    </section>
+
+    <section class="section" id="gallery">
+        <h2>FEATURED PROPERTIES</h2>
+        <div class="gallery-container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be generated by JavaScript -->
+            </div>
+            <div class="gallery-lightbox" id="lightbox">
+                <span class="close" onclick="closeLightbox()">&times;</span>
+                <img class="lightbox-image" id="lightboxImage" src="" alt="">
+                <div class="lightbox-nav">
+                    <button class="prev-btn" onclick="prevPhoto()">❮</button>
+                    <button class="next-btn" onclick="nextPhoto()">❯</button>
+                </div>
+                <div class="lightbox-caption" id="lightboxCaption"></div>
             </div>
         </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="section-underline"></div>
-            <p class="section-subtitle">Complete luxury real estate solutions for discerning clients</p>
-            <div class="services-grid">
-                <div class="service-box">
-                    <div class="service-icon">🏡</div>
-                    <h3>Property Curation</h3>
-                    <p>Handpicked estates on pristine natural settings and exclusive locations.</p>
-                </div>
-                <div class="service-box">
-                    <div class="service-icon">🌿</div>
-                    <h3>Sustainable Design</h3>
-                    <p>Eco-luxury properties built with environmental responsibility in mind.</p>
-                </div>
-                <div class="service-box">
-                    <div class="service-icon">🏞️</div>
-                    <h3>Land Acquisition</h3>
-                    <p>Premium land in serene natural environments for development.</p>
-                </div>
-                <div class="service-box">
-                    <div class="service-icon">✨</div>
-                    <h3>Concierge Service</h3>
-                    <p>Full-service management and personalized support for your property.</p>
-                </div>
+    <section class="section" id="services">
+        <h2>OUR SERVICES</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-number" style="background: #004b87;">🏠</div>
+                <h3>Real Estate Done Right</h3>
+                <p>Nervous about your property adventure? Don't be. Whether you're getting ready to buy or sell your residence, looking at investment properties, or just curious about the markets, our team ensures you get the best experience possible!</p>
+            </div>
+            <div class="service-card">
+                <div class="service-number" style="background: #004b87;">🏢</div>
+                <h3>Commercial & Residential</h3>
+                <p>Large or small, condo or mansion, we can find it and get at the price that's right. Fiber oppers? Luxury? We can help with all of it! We live, work, and play in this community. Happy to help you find where to put your hard-earned dollars.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-number" style="background: #004b87;">💼</div>
+                <h3>Rely on Expertise</h3>
+                <p>If you have questions about affordability, credit, and loan options, trust us to connect you with the right people to get the answers you need in a timely fashion. We make sure you feel confident and educated every step of the way.</p>
             </div>
         </div>
     </section>
 
-
-    <section id="carousel" class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-slide active">
-                <img src="assets/mtn falls pond.webp" alt="Luxury Property 1">
-                <div class="carousel-content">
-                    <h1>Modern Beachfront Villa</h1>
-                    <p>Where nature meets luxury living</p>
-                    <button class="cta-button">Explore Now</button>
+    <section class="section" id="contact">
+        <h2>GET IN TOUCH</h2>
+        <div class="contact-section">
+            <form class="contact-form" onsubmit="handleContactForm(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-            </div>
-
-            <div class="carousel-slide">
-                <img src="https://images.unsplash.com/photo-1613490900233-141b84ecdd1f?w=1600&h=900&fit=crop" alt="Luxury Property 2">
-                <div class="carousel-content">
-                    <h1>Countryside Estate</h1>
-                    <p>Nestled in pristine natural landscapes</p>
-                    <button class="cta-button">Explore Now</button>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-            </div>
-
-            <div class="carousel-slide">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&h=900&fit=crop" alt="Luxury Property 3">
-                <div class="carousel-content">
-                    <h1>Mountain Retreat</h1>
-                    <p>Breathtaking views and sustainable design</p>
-                    <button class="cta-button">Explore Now</button>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
                 </div>
-            </div>
-        </div>
-
-        <button class="carousel-arrow prev" onclick="prevSlide()">❮</button>
-        <button class="carousel-arrow next" onclick="nextSlide()">❯</button>
-
-        <div class="carousel-controls">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-    </section>
-
-
-
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="section-underline"></div>
-            <p class="section-subtitle">Let us help you find your perfect luxury sanctuary</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="tel" placeholder="Your Phone" required>
-                <input type="text" placeholder="Property Interest" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Inquiry</button>
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
             </form>
+
+            <div class="contact-info">
+                <h3>Marci Metzger - THE RIDGE REALTY GROUP</h3>
+                
+                <div class="info-block">
+                    <h4>Office Address</h4>
+                    <p>3190 HW 160, Suite F</p>
+                    <p>Pahrump, Nevada 89048</p>
+                    <p>United States</p>
+                </div>
+
+                <div class="info-block">
+                    <h4>Phone</h4>
+                    <p><strong>(206) 919-6886</strong></p>
+                </div>
+
+                <div class="info-block">
+                    <h4>Office Hours</h4>
+                    <p><strong>Open Today:</strong> <span id="hours">8:00 AM - 7:00 PM</span></p>
+                    <p><strong>Open Daily:</strong> 8:00 AM - 7:00 PM</p>
+                    <p><em>Appointments outside office hours available upon request.</em></p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Marci Metzger Homes. All rights reserved. | Exclusive Natural Luxury Living</p>
+        <p>&copy; 2024 Marci Metzger - The Ridge Realty Group. All rights reserved.</p>
+        <p>Equal Housing Opportunity | Privacy Policy & Terms of Service Apply</p>
     </footer>
 
     <script src="script.js"></script>
