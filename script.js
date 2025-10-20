@@ -2,33 +2,32 @@ const galleryPhotos = [
     {
         title: 'Luxury Mountain Estate',
         price: '$2,500,000',
-        url:   './assets/13.webp'
-
+        url:   'assets/13.webp'
     },
     {
         title: 'Modern Contemporary Home',
         price: '$1,800,000',
-        url:   '/assets/15.webp'
+        url:   'assets/15.webp'
     },
     {
         title: 'Beachfront Paradise',
         price: '$3,200,000',
-        url:   '/assets/14.webp'
+        url:   '/ssets/14.webp'
     },
     {
         title: 'Urban Penthouse',
         price: '$4,500,000',
-        url:   '/assets/22.webp'
+        url:   'assets/22.webp'
     },
     {
         title: 'Country Estate',
         price: '$2,100,000',
-        url:   '/assets/19.webp'
+        url:   'assets/19.webp'
     },
     {
         title: 'Luxury Villa',
         price: '$2,750,000',
-        url:   '/assets/20.webp'
+        url:   'assets/20.webp'
 
     }
 ];
