@@ -1,5 +1,5 @@
-.get-sold-section {
-    background: #f9f9f9;
+.get-sold-section h2 {
+    color: #16302b;
 }
 
 .services-grid {
@@ -35,6 +35,11 @@
     font-size: 1.8rem;
     font-weight: bold;
     margin: 0 auto 1.5rem;
+}
+
+.service-number svg {
+    width: 32px;
+    height: 32px;
 }
 
 .service-card h3 {

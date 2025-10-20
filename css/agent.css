@@ -1,5 +1,5 @@
 .agent-intro {
-    background: #f5f5f5;
+    background: transparent;
     padding: 4rem 2rem;
     text-align: center;
 }
@@ -11,13 +11,16 @@
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
+    background: transparent;
+    padding: 3rem;
+    border-radius: 8px;
 }
 
 .agent-photo {
     width: 280px;
     height: 280px;
     border-radius: 50%;
-    background: #e0e0e0;
+    background: transparent;
     margin: 0 auto;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
