@@ -1,3 +1,10 @@
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
 const galleryPhotos = [
     {
         title: 'Luxury Mountain Estate',
@@ -32,6 +39,7 @@ const galleryPhotos = [
     }
 ];
 
+
 let currentSlide = 0;
 let currentLightboxIndex = 0;
 
@@ -39,7 +47,7 @@ function initCarousel() {
     const carouselTrack = document.getElementById('carouselTrack');
     const carouselDots = document.getElementById('carouselDots');
     
-    // Create carousel items
+    // create carousel items
     galleryPhotos.forEach((photo, index) => {
         const item = document.createElement('div');
         item.className = 'carousel-item';
@@ -57,7 +65,7 @@ function initCarousel() {
         carouselTrack.appendChild(item);
     });
     
-    // Create dots
+    // dots
     galleryPhotos.forEach((_, index) => {
         const dot = document.createElement('button');
         dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
@@ -73,7 +81,7 @@ function updateCarousel() {
     
     carouselTrack.style.transform = `translateX(-${currentSlide * itemWidth}px)`;
     
-    // Update dots
+    // update dots
     document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
     });
@@ -122,7 +130,7 @@ function prevLightboxPhoto() {
     openLightbox(currentLightboxIndex);
 }
 
-// Keyboard navigation
+// keyboard navigation
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeLightbox();
