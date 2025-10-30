@@ -1,7 +1,13 @@
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const sectionPosition = section.offsetTop - headerHeight;
+        
+        window.scrollTo({
+            top: sectionPosition,
+            behavior: 'smooth'
+        });
     }
 }
 
