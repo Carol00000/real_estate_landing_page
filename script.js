@@ -2,10 +2,13 @@ function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
         const headerHeight = document.querySelector('header').offsetHeight;
-        const sectionPosition = section.offsetTop - headerHeight;
+        const sectionTop = section.offsetTop;
+        
+        // Simple offset from top accounting for fixed header
+        const scrollPosition = sectionTop - headerHeight - 20; // 20px extra padding
         
         window.scrollTo({
-            top: sectionPosition,
+            top: scrollPosition,
             behavior: 'smooth'
         });
     }
@@ -41,10 +44,8 @@ const galleryPhotos = [
         title: 'Luxury Villa',
         price: '$2,750,000',
         url:   'assets/20.webp'
-
     }
 ];
-
 
 let currentSlide = 0;
 let currentLightboxIndex = 0;
@@ -52,8 +53,9 @@ let currentLightboxIndex = 0;
 function initCarousel() {
     const carouselTrack = document.getElementById('carouselTrack');
     const carouselDots = document.getElementById('carouselDots');
+    const carouselThumbnails = document.getElementById('carouselThumbnails');
     
-    // create carousel items
+    // Create main carousel items
     galleryPhotos.forEach((photo, index) => {
         const item = document.createElement('div');
         item.className = 'carousel-item';
@@ -71,7 +73,21 @@ function initCarousel() {
         carouselTrack.appendChild(item);
     });
     
-    // dots
+    // Create thumbnails
+    galleryPhotos.forEach((photo, index) => {
+        const thumbnail = document.createElement('div');
+        thumbnail.className = `thumbnail-item ${index === 0 ? 'active' : ''}`;
+        thumbnail.onclick = () => goToSlide(index);
+        thumbnail.innerHTML = `
+            <img src="${photo.url}" alt="${photo.title}">
+            <div class="thumbnail-overlay">
+                <div>${photo.title}</div>
+            </div>
+        `;
+        carouselThumbnails.appendChild(thumbnail);
+    });
+    
+    // Dots
     galleryPhotos.forEach((_, index) => {
         const dot = document.createElement('button');
         dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
@@ -83,13 +99,21 @@ function initCarousel() {
 function updateCarousel() {
     const carouselTrack = document.getElementById('carouselTrack');
     const items = document.querySelectorAll('.carousel-item');
-    const itemWidth = items[0].offsetWidth + 24; // 24px gap
+    const thumbnails = document.querySelectorAll('.thumbnail-item');
     
-    carouselTrack.style.transform = `translateX(-${currentSlide * itemWidth}px)`;
+    if (items.length > 0) {
+        const itemWidth = items[0].offsetWidth;
+        carouselTrack.style.transform = `translateX(-${currentSlide * itemWidth}px)`;
+    }
     
-    // update dots
+    // Update dots
     document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
+    });
+    
+    // Update thumbnails
+    thumbnails.forEach((thumbnail, index) => {
+        thumbnail.classList.toggle('active', index === currentSlide);
     });
 }
 
@@ -136,7 +160,7 @@ function prevLightboxPhoto() {
     openLightbox(currentLightboxIndex);
 }
 
-// keyboard navigation
+// Keyboard navigation
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeLightbox();
