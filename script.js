@@ -28,7 +28,7 @@ const galleryPhotos = [
     {
         title: 'Beachfront Paradise',
         price: '$3,200,000',
-        url:   '/assets/14.webp'
+        url:   'assets/14.webp'
     },
     {
         title: 'Urban Penthouse',
@@ -160,19 +160,85 @@ function prevLightboxPhoto() {
     openLightbox(currentLightboxIndex);
 }
 
-// Keyboard navigation
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        closeLightbox();
+// Mobile menu toggle function (must be global for onclick)
+function toggleMobileMenu() {
+    const nav = document.getElementById('mainNav');
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (nav && toggle) {
+        nav.classList.toggle('active');
+        toggle.classList.toggle('active');
     }
-    if (event.key === 'ArrowRight') {
-        nextLightboxPhoto();
+}
+
+// DOM to be loaded
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Initialize carousel
+    initCarousel();
+    
+    // Close mobile menu when clicking a link
+    const navLinks = document.querySelectorAll('nav a');
+    if (navLinks.length > 0) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('mainNav');
+                const toggle = document.querySelector('.mobile-menu-toggle');
+                
+                if (nav) nav.classList.remove('active');
+                if (toggle) toggle.classList.remove('active');
+            });
+        });
     }
-    if (event.key === 'ArrowLeft') {
-        prevLightboxPhoto();
-    }
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+    });
+    
+    // Active nav link based on scroll position
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.classList.remove('active');
+                    const onclick = link.getAttribute('onclick');
+                    if (onclick && onclick.includes(sectionId)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    });
+    
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeLightbox();
+        }
+        if (event.key === 'ArrowRight') {
+            nextLightboxPhoto();
+        }
+        if (event.key === 'ArrowLeft') {
+            prevLightboxPhoto();
+        }
+    });
+    
 });
 
-// Initialize carousel on page load
-document.addEventListener('DOMContentLoaded', initCarousel);
+// Update carousel on window resize
 window.addEventListener('resize', updateCarousel);
