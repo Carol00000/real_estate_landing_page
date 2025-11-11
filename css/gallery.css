@@ -110,7 +110,7 @@
     color: #d4a574;
 }
 
-/* Thumbnails Section */
+/* THUMBNAILS SECTION */
 .carousel-thumbnails {
     width: 160px;
     display: flex;
@@ -178,7 +178,7 @@
     opacity: 1;
 }
 
-/* Navigation Buttons */
+/* NAV BUTTONS */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -218,7 +218,7 @@
     right: 15px;
 }
 
-/* Carousel Dots */
+/* CAROUSEL DOTS */
 .carousel-dots {
     display: flex;
     justify-content: center;

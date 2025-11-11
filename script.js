@@ -55,7 +55,7 @@ function initCarousel() {
     const carouselDots = document.getElementById('carouselDots');
     const carouselThumbnails = document.getElementById('carouselThumbnails');
     
-    // Create main carousel items
+    // MAIN CAROUSEL
     galleryPhotos.forEach((photo, index) => {
         const item = document.createElement('div');
         item.className = 'carousel-item';
@@ -73,7 +73,7 @@ function initCarousel() {
         carouselTrack.appendChild(item);
     });
     
-    // Create thumbnails
+    // THUMBNAILS
     galleryPhotos.forEach((photo, index) => {
         const thumbnail = document.createElement('div');
         thumbnail.className = `thumbnail-item ${index === 0 ? 'active' : ''}`;
@@ -87,7 +87,7 @@ function initCarousel() {
         carouselThumbnails.appendChild(thumbnail);
     });
     
-    // Dots
+    // DOTS
     galleryPhotos.forEach((_, index) => {
         const dot = document.createElement('button');
         dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
