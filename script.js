@@ -171,6 +171,53 @@ function toggleMobileMenu() {
     }
 }
 
+// Contact form handler
+function handleContactForm(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const submitBtn = form.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    
+    // Simulate form submission
+    submitBtn.textContent = 'SENDING...';
+    submitBtn.disabled = true;
+    
+    setTimeout(() => {
+        // Show success state
+        submitBtn.textContent = 'MESSAGE SENT!';
+        submitBtn.classList.add('success');
+        
+        // Show toast notification
+        showToast('Thank you! Your message has been sent successfully.');
+        
+        // Reset form
+        form.reset();
+        
+        // Reset button after 3 seconds
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.classList.remove('success');
+            submitBtn.disabled = false;
+        }, 3000);
+    }, 1500);
+}
+
+// Toast notification function
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.classList.add('fade-out');
+        setTimeout(() => {
+            document.body.removeChild(toast);
+        }, 300);
+    }, 3000);
+}
+
 // DOM to be loaded
 document.addEventListener('DOMContentLoaded', function() {
     

@@ -8,6 +8,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
+    padding-top: 80px; 
 }
 
 .section {
@@ -21,7 +22,7 @@ body {
     font-size: 2.2rem;
     font-weight: 300;
     margin-bottom: 3rem;
-    color: #fffbf0;
+    color: #16302b; 
     letter-spacing: 2px;
 }
 
